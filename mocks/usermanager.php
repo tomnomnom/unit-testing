@@ -4,7 +4,7 @@ require __DIR__.'/user.php';
 class UserManager {
     protected $db;
 
-    function __construct($db){
+    function __construct($db = null){
         $this->db = $db;
     }
 
