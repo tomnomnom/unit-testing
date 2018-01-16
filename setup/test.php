@@ -1,11 +1,15 @@
 <?php
 require __DIR__.'/func.php';
+require __DIR__.'/filegen.php';
 
-// Using the numbers.txt file feels 'magic'
-// Write some code to make and use a temp file instead
-assert(sumLines("./numbers.txt") == 36);
+$f = new FileGen();
 
-// Add tests for:
-//     * Non readable file
-//     * Empty file
-//     * File with floats in it
+assert(sumLines($f->fixture(range(1, 8))) == 36);
+assert(sumLines($f->fixture([20, 20]))    == 40);
+assert(sumLines($f->fixture([2.2, 2.2]))  == 4);
+assert(sumLines($f->fixture([]))          == 0);
+assert(sumLines("not a file!")            == false);
+
+$f->cleanup();
+
+

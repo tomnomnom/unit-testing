@@ -1,8 +1,7 @@
 <?php
 require __DIR__.'/usermanager.php';
 
-function checkLogin($username, $password){
-    $um = new UserManager();
+function checkLogin(UserManager $um, $username, $password){
 
     $user = $um->getByUsername($username);
 

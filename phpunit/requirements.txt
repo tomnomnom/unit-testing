@@ -1,0 +1,4 @@
+normaliseUsername should:
+    * Remove any non alpha-numeric characters
+    * Make the username all lower case
+    * Truncate the username after 16 bytes
