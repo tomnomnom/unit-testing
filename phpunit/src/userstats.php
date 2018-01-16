@@ -29,5 +29,18 @@ class UserStats {
     public function numUsers(){
         return count($this->getUsers()); 
     }
+    
+    public function usersInAgeRange($lower, $upper){
+        $users = $this->getUsers(); 
+        $out = [];
+
+        foreach ($users as $user){
+            if ($user['age'] >= $lower && $user['age'] <= $upper){
+                $out[] = $user;
+            }
+        }
+        return $out;
+    }
+
 }
 
